@@ -75,20 +75,8 @@ public sealed class Moto : Vehicle{
 public class Program{
     static void Main(String[] args){
     
-        var settings = MongoClientSettings.FromConnectionString("mongodb+srv://wguarino:a19369099@cluster0.zdpts.mongodb.net/?retryWrites=true&w=majority");
-        var client = new MongoClient(settings);
-        var database = client.GetDatabase("myFirstDatabase");
-        var collection = database.GetCollection<BsonDocument>("collection1");
         
-        //var json = JsonConvert.DeserializeObject();
-        var res = collection.Aggregate().Group(new BsonDocument{
-            {"_id", "$League" },
-            {"count", new BsonDocument("$sum", 1)}
-        }).Match(new BsonDocument{
-            {"_id", "EU"}
-        });    
-        foreach (var item in res.ToEnumerable()){
-            Console.WriteLine(item);
-        }
+
+
     }
 }
