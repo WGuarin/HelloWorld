@@ -75,7 +75,7 @@ public sealed class Moto : Vehicle{
 public class Program{
     static void Main(String[] args){
     
-        
+        var a = 0;
 
 
     }
